@@ -356,9 +356,9 @@ return {
   },
 
 
-  { -- interface with databases
-    'tpope/vim-dadbod',
-    'kristijanhusak/vim-dadbod-completion',
-    'kristijanhusak/vim-dadbod-ui',
-  },
+  --{ -- interface with databases
+  --  'tpope/vim-dadbod',
+  --  'kristijanhusak/vim-dadbod-completion',
+  --  'kristijanhusak/vim-dadbod-ui',
+  --},
 }

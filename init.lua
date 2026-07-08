@@ -1,10 +1,10 @@
--- vim.treesitter.language.add('pandoc_markdown', { path = "/usr/local/lib/libtree-sitter-pandoc-markdown.so" })
--- vim.treesitter.language.add('pandoc_markdown_inline', { path = "/usr/local/lib/libtree-sitter-pandoc-markdown-inline.so" })
--- vim.treesitter.language.register('pandoc_markdown', { 'quarto', 'rmarkdown' })
-
--- vim.treesitter.language.add('quarto_markdown', { path = "/usr/local/lib/libtree-sitter-markdown.so" })
--- vim.treesitter.language.add('quarto_markdown_inline', { path = "/usr/local/lib/libtree-sitter-markdown-inline.so" })
--- vim.treesitter.language.register('quarto_markdown', { 'quarto', 'rmarkdown' })
+--vim.treesitter.language.add('pandoc_markdown', { path = "/usr/local/lib/libtree-sitter-pandoc-markdown.so" })
+--vim.treesitter.language.add('pandoc_markdown_inline', { path = "/usr/local/lib/libtree-sitter-pandoc-markdown-inline.so" })
+--vim.treesitter.language.register('pandoc_markdown', { 'quarto', 'rmarkdown' })
+--
+--vim.treesitter.language.add('quarto_markdown', { path = "/usr/local/lib/libtree-sitter-markdown.so" })
+--vim.treesitter.language.add('quarto_markdown_inline', { path = "/usr/local/lib/libtree-sitter-markdown-inline.so" })
+--vim.treesitter.language.register('quarto_markdown', { 'quarto', 'rmarkdown' })
 
 require 'config.global'
 require 'config.lazy'
@@ -58,3 +58,9 @@ vim.cmd [[
   highlight CursorLineNr guibg=none
 ]]
 
+-- Send highlighted text to console as in rstudio
+vim.cmd [[
+  map ctrl+shift+enter no_op
+  map shift+enter send_text all \x1b[13;2u
+  map ctrl+enter send_text all \x1b[13;5u
+]]

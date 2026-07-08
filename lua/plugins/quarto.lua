@@ -24,7 +24,15 @@ return {
   { -- directly open ipynb files as quarto docuements
     -- and convert back behind the scenes
     'GCBallesteros/jupytext.nvim',
+    lazy = false,
     opts = {
+      custom_binary_path = "/opt/homebrew/bin/jupytext",
+
+      style = "quarto",
+      output_extension = "qmd",
+      force_ft = "quarto",
+
+
       custom_language_formatting = {
         python = {
           extension = 'qmd',

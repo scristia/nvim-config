@@ -13,7 +13,8 @@ return {
     dev = false,
     -- version = '*',
     -- OR build from source, requires nightly: https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust
-    build = 'cargo build --release',
+    -- build = 'cargo build --release',
+    build = 'rustup run nightly cargo build --release',
     lazy = false,
     dependencies = {
       { 'rafamadriz/friendly-snippets' },
