@@ -17,7 +17,7 @@ vim.opt.mouse = 'a' -- enable mouse
 vim.opt.mousefocus = true
 
 -- clipboard
-vim.o.clipboard = "unnamedplus"
+vim.o.clipboard = 'unnamedplus'
 
 vim.opt.timeoutlen = 400 -- until which-key pops up
 vim.opt.updatetime = 250 -- for autocommands and hovers
@@ -132,11 +132,12 @@ vim.filetype.add {
     ojs = 'javascript',
     pyodide = 'python',
     webr = 'r',
+    Rtex = 'rnoweb',
+    rtex = 'rnoweb',
   },
-  patter = {
-    ['/tmp/bash-fc*'] = 'bash'
-    
-  }
+  pattern = {
+    ['/tmp/bash-fc*'] = 'bash',
+  },
 }
 
 -- additional builtin vim packages
@@ -145,6 +146,5 @@ vim.cmd.packadd 'cfilter'
 
 -- use commands
 
-vim.api.nvim_create_user_command("CopyRelPath", "call setreg('+', expand('%'))", {})
-vim.api.nvim_create_user_command("CopyPath", "call setreg('+', expand('%:p'))", {})
-
+vim.api.nvim_create_user_command('CopyRelPath', "call setreg('+', expand('%'))", {})
+vim.api.nvim_create_user_command('CopyPath', "call setreg('+', expand('%:p'))", {})
