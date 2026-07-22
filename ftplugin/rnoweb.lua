@@ -2,7 +2,8 @@
 -- cell boundaries are the noweb chunk header <<...>>= and terminator @,
 -- so slime#send_cell() sends only the R code between them
 vim.b.slime_cell_delimiter = [[^\s*<<.*>>=\|^@\s*$]]
-vim.b.slime_bracketed_paste = 1
+-- system R's bundled readline (5.7) predates bracketed paste; only radian handles it
+vim.b.slime_bracketed_paste = vim.fn.executable 'radian' == 1 and 1 or 0
 
 -- wrap text, but by word no character
 -- indent the wrappped line
